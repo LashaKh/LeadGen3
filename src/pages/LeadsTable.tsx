@@ -1,6 +1,5 @@
 import React from 'react';
 import { ListChecks } from 'lucide-react';
-import LeadsDataTable from '../components/LeadsDataTable';
 import { GoogleSheetsEmbed } from '../components/GoogleSheetsEmbed';
 
 export default function LeadsTablePage() {
@@ -14,15 +13,10 @@ export default function LeadsTablePage() {
           Generated Leads
         </h1>
         <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-          Review and manage your AI-generated leads. Each lead is carefully selected
-          based on your product specifications and target market.
+          Review and manage your AI-generated leads through the Google Sheets integration.
         </p>
       </div>
 
-      <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 shadow-xl border border-purple-900/30">
-        <LeadsDataTable />
-      </div>
-      
       <div className="mt-12">
         <h2 className="text-2xl font-bold text-white mb-6">Google Sheets View</h2>
         <GoogleSheetsEmbed 

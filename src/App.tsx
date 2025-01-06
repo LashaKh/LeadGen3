@@ -2,11 +2,11 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import GenerateLeads from './pages/GenerateLeads';
-import LeadsTable from './pages/LeadsTable';
 import Landing from './pages/Landing';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import ProtectedRoute from './components/ProtectedRoute';
+import LeadsTablePage from './pages/LeadsTable';
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
           </ProtectedRoute>
         }>
           <Route index element={<GenerateLeads />} />
-          <Route path="leads" element={<LeadsTable />} />
+          <Route path="leads" element={<LeadsTablePage />} />
         </Route>
       </Routes>
     </BrowserRouter>

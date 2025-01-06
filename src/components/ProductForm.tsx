@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Loader2 } from 'lucide-react';
-import { supabase } from '../lib/supabase';
 import { useNavigate } from 'react-router-dom';
 import { generateLeads } from '../lib/api';
 import { FormInput } from './FormInput';
@@ -46,17 +45,6 @@ export default function ProductForm() {
         showToast('No leads were generated. Please try different criteria.', 'error');
         return;
       }
-      
-      const { error: insertError } = await supabase.from('leads').insert(
-        leads.map(([company, website, description]) => ({
-          company_name: company,
-          website: website,
-          description: description,
-          user_id: user.id
-        }))
-      );
-      
-      if (insertError) throw insertError;
 
       setFormData(initialFormData);
       showToast('Leads generated successfully!', 'success');
